@@ -13,14 +13,6 @@ class Image {
             $imageObject = imagecreatefromjpeg($file['tmp_name']);
         }
 
-        if (!$imageObject) {
-            return;
-        }
-    
-        //$imageSize = getimagesize($file['tmp_name']);
-    
-        $quality = 100 / $file['size'];
-    
-        return imagejpeg($imageObject, $path, $quality);
+        imagejpeg($imageObject, $path);
     }
 }

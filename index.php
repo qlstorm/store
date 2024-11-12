@@ -1,13 +1,9 @@
 <?php
 
-error_reporting(E_ALL);
+    function autoload($className) {
+        include str_replace('\\', '/', $className) . '.php';
+    }
 
-mysqli_report(MYSQLI_REPORT_OFF);
+    spl_autoload_register('autoload');
 
-function autoload($class) {
-    include str_replace('\\', '/', $class) . '.php';
-}
-
-spl_autoload_register('autoload');
-
-lib\Application::run();
+    lib\Application::run();

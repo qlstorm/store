@@ -18,15 +18,11 @@ class Elem {
         $dir = 'files/images/' . $id;
 
         mkdir($dir, 0777, true);
-
-        $n = 1;
         
-        foreach ($files as $file) {
-            $path = $dir . '/' . time() . $n . '.jpg';
+        foreach ($files as $i => $file) {
+            $path = $dir . '/' . time() . $i . '.' . $file['ext'];
 
             Image::save($file, $path);
-
-            $n++;
         }
     }
 }

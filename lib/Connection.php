@@ -8,6 +8,8 @@ class Connection {
 
     public static function connect() {
         if (!self::$connection) {
+            mysqli_report(MYSQLI_REPORT_OFF);
+            
             self::$connection = mysqli_connect(
                 Application::$conf['host'],
                 Application::$conf['login'], 

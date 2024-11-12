@@ -7,7 +7,7 @@ class Application {
     public static $params = [];
     public static $conf = [];
 
-    private static $controller = 'application';
+    private static $controller = 'index';
     private static $configController = 'config';
     
     private static $container = '\\controllers\\';
